@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>layout 后台大布局 - Layui</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link href="css/shopping.css" rel='stylesheet' type='text/css' />
+    <link href="css/shoplist.css" rel='stylesheet' type='text/css' />
+    <link rel="start icon" href="images/resize_png_new.png"  >
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">商品管理系统</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="">控制台</a></li>
+            <li class="layui-nav-item"><a href="">商品管理</a></li>
+            <li class="layui-nav-item"><a href="">用户</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">其它系统</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">邮件管理</a></dd>
+                    <dd><a href="">消息管理</a></dd>
+                    <dd><a href="">授权管理</a></dd>
+                </dl>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="images/headicon.jpg" class="layui-nav-img">
+                    欢迎登陆
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">基本资料</a></dd>
+                    <dd><a href="">安全设置</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="">退出登录</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">所有商品</a>
+                   <!-- <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">列表一</a></dd>
+                        <dd><a href="javascript:;">列表二</a></dd>
+                        <dd><a href="javascript:;">列表三</a></dd>
+                        <dd><a href="">超链接</a></dd>
+                    </dl>-->
+                </li>
+            <!--    <li class="layui-nav-item">
+                    <a href="javascript:;">解决方案</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">列表一</a></dd>
+                        <dd><a href="javascript:;">列表二</a></dd>
+                        <dd><a href="">超链接</a></dd>
+                    </dl>
+                </li>-->
+                <!--<li class="layui-nav-item"><a href="">云市场</a></li>-->
+                <li class="layui-nav-item"><a href="addGoods.html">发布商品</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">
+            <div class="picture"><a href=""><img src="images/w1.jpg"  />女神的新衣娜娜同款<br />
+                <h5 style="color:#F66">限时优惠￥399</h5>	<div class="mask">
+                    <div class="info">Quick View</div>
+                </div></a>
+            </div>
+            <div class="picture"><a href=""><img src="images/w2.jpg" />2014秋季粉色连衣裙<br />
+                <h5 style="color:#F66"> 限时优惠￥199</h5>	<div class="mask">
+                    <div class="info">Quick View</div>
+                </div></a>
+            </div>
+            <div class="picture"><a href=""><img src="images/w3.jpg" />2013秋季黄色针织衫<br />
+                <h5 style="color:#F66"> 限时优惠￥299</h5>	<div class="mask">
+                    <div class="info">Quick View</div>
+                </div></a>
+            </div>
+            <div class="picture"><a href=""><img src="images/w4.jpg" />商务绅士风格白色衬衫<br />
+                <h5 style="color:#F66"> 限时优惠￥799</h5>	<div class="mask">
+                    <div class="info">Quick View</div>
+                </div></a>
+            </div>
+            <div class="picture"><a href=""><img src="images/w5.jpg" />女神新衣尚雯婕同款<br />
+                <h5 style="color:#F66"> 限时优惠￥699</h5>	<div class="mask">
+                    <div class="info">Quick View</div>
+                </div></a>
+            </div>
+            <div class="picture"><a href=""><img src="images/w6.jpg" />女神新衣张馨予同款<br />
+                <h5 style="color:#F66"> 限时优惠￥399</h5>	<div class="mask">
+                    <div class="info">Quick View</div>
+                </div></a>
+            </div>
+            <div class="picture"><a href=""><img src="images/w7.jpg" />女神新衣亲子装儿童款<br />
+                <h5 style="color:#F66"> 限时优惠￥199</h5>	<div class="mask">
+                    <div class="info">Quick View</div>
+                </div></a>
+            </div>
+            <div class="picture"><a href=""><img src="images/w8.jpg"  />时尚五分袖立领短上衣<br />
+                <h5 style="color:#F66">限时优惠￥399</h5>	<div class="mask">
+                    <div class="info">Quick View</div>
+                </div></a>
+            </div>
+            <div class="picture"><a href=""><img src="images/w9.jpg" />2014最新时尚水晶鞋<br />
+                <h5 style="color:#F66">限时优惠￥499</h5>	<div class="mask">
+                    <div class="info">Quick View</div>
+                </div></a>
+            </div>
+            <div class="picture"><a href=""><img src="images/w10.jpg" />伊芙丽中长毛呢外套<br />
+                <h5 style="color:#F66">限时优惠￥399</h5>	<div class="mask">
+                    <div class="info">Quick View</div>
+                </div></a>
+            </div>
+            <div class="picture"><a href=""><img src="images/w11.jpg" />伊芙丽蓝色妮子大衣<br />
+                <h5 style="color:#F66"> 限时优惠￥799</h5>	<div class="mask">
+                    <div class="info">Quick View</div>
+                </div></a>
+            </div>
+            <div class="picture"><a href=""><img src="images/w12.jpg" />女神新衣娜娜套装<br />
+                <h5 style="color:#F66"> 限时优惠￥699</h5>	<div class="mask">
+                    <div class="info">Quick View</div>
+                </div></a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+       啊哈
+    </div>
+</div>
+<script src="layui/layui.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+</script>
+<script type="text/javascript"  src="script/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="script/js.js"></script>
+</body>
+</html>
