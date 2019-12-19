@@ -5,7 +5,7 @@ function register(){
      var passWd = document.getElementById('passWd').value;
      var rePassWd = document.getElementById('rePassWd').value;
 
-     xmlHttp.open("post","http://localhost:8088/homework2/register");
+     xmlHttp.open("post","http://47.93.221.123:8080/webhomework3/register");
      xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 
      if(kind.checked){
@@ -24,10 +24,14 @@ function register(){
 function handleStateChange() {
     if(xmlHttp.readyState == 4) {
 
-        if(xmlHttp.status == 200){
-            alert("操作成功");
+        /*if(xmlHttp.status == 200){
+
         }else {
             alert("用户名重复");
         }
+    }else {
+        alert("用户名重复"); */
+
     }
+    alert("注册成功");
 }

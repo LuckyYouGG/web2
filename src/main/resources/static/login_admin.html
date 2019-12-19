@@ -1,9 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>谢亚梅登录</title>
-<link href="css/register.css" rel="stylesheet" />
+<title>管理员登录</title>
+<link href="css/register.css" rel="stylesheet">
 <link rel="start icon" href="images/resize_png_new.png"  >
 </head>
 
@@ -20,15 +20,15 @@
   </div>
   <!--hd end-->
   <div class="login-box w940 clearfix">
-    <div class="pic fl"> <img src="images/page.jpg" title="上折扣社，带你边看边买"> </div>
+    <div class="pic fl"> <img src="images/page.jpg"> </div>
     <div class="fr entry">
-      <h2 class="title">会员登录</h2>
+      <h2 class="title">管理员登录</h2>
       <dl class="entry-name">
         <dt>
           <label>账号</label>
         </dt>
         <dd>
-          <input type="text" class="text" placeholder="手机号/用户名">
+          <input id="userName" type="text" class="text" placeholder="手机号/用户名">
         </dd>
       </dl>
       <dl>
@@ -36,23 +36,24 @@
           <label for="password">密码</label>
         </dt>
         <dd>
-          <input type="password" class="text">
+          <input id="passWd" type="password" class="text">
         </dd>
       </dl>
       <div class="item">
-        <input type="button">
+        <input type="button" onclick="login()">
       </div>
-      <div class="forget-psd mb15"> <a class="fl" href="index.html">折扣社直通车</a><a href="register.html" class="fr">免费注册</a> </div>
     </div>
   </div>
   <!--footer start-->
   <div class="ft for-register mt10">
     <div class="ft_box clearfix">
-      <p class="fl"><a href="login_admin.html" class="copyRight blue_link">管理员入口</a></p>
-      <p class="fr copyRight">鄂ICP ©折扣社2013-2014，All Rights Reserved</p>
+      <p class="fl"><a href="../static/login_user.html" class="copyRight blue_link">个人用户登录</a></p>
+      <p class="fr copyRight">鲁ICP ©折扣社2019-2020，All Rights Reserved</p>
     </div>
   </div>
   <!--footer end--> 
 </div>
+<script type="text/javascript" src="script/login_admin.js"></script>
 </body>
+
 </html>

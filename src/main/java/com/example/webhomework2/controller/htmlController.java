@@ -1,7 +1,6 @@
 package com.example.webhomework2.controller;
 
 
-import bean.MerchantBean;
 import bean.UserBean;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -21,38 +20,59 @@ public class htmlController {
     @Resource
     private JdbcTemplate jdbcTemplate;
 
-    @RequestMapping("/login_user.html")
-    public String test(){
-        return "login_user";
-    }
 // httpServletResponse.sendRedirect
     @RequestMapping("/login")
-    public String longInUser(HttpServletRequest req, HttpServletResponse res) {
+    public void longInUser(HttpServletRequest req, HttpServletResponse res) {
         String username = req.getParameter("userName");
         String passwd = req.getParameter("passWd");
         String kind = req.getParameter("kind");
-        if(checkLogin(username,passwd)){
+
+        if(checkLogin(username,passwd,kind)){
+            res.setStatus(200);
           if(kind.equals("1")){
-              return "index";
+              try{
+                  res.sendRedirect("http://47.93.221.123:8080/webhomework3/index.html");
+
+                //  System.out.println("页面跳转");
+                  return;
+              }catch (Exception e){
+                  e.printStackTrace();
+              }
           }else{
-              return "";
+              try{
+                  res.sendRedirect("http://47.93.221.123:8080/webhomework3/admin.html");
+                  return;
+              }catch (Exception e){
+                  e.printStackTrace();
+              }
           }
-        }else
-         return "login_user";
+          System.out.println("用户合法");
+        }else {
+            System.out.println("用户不合法");
+            res.setStatus(201);
+        }
+
     }
 
     @RequestMapping("/register")
-    public String register(HttpServletRequest req, HttpServletResponse res){
+    public void register(HttpServletRequest req, HttpServletResponse res){
         String username = req.getParameter("userName");
         String passwd = req.getParameter("passWd");
         String kind = req.getParameter("kind");
         if(registerUser(username,passwd,kind)){
-           return "1";
-        }else return "0";
+            try{
+                res.sendRedirect("static/index.html");
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            res.setStatus(200);
+        }else {
+            res.setStatus(0);
+        }
 
     }
-    public boolean checkLogin(String username, String passwd) {
-            String sql = "select * from users where username='" + username + "'passwd=" + "'" + passwd + "'";
+    public boolean checkLogin(String username, String passwd,String kind) {
+            String sql = "select * from users where username='" + username + "'and passwd=" + "'" + passwd + "' and kind='"+kind+"'";
             try{
                 List<UserBean> Users = jdbcTemplate.query(sql, new RowMapper<UserBean>() {
                     UserBean tmp = null;
@@ -74,7 +94,7 @@ public class htmlController {
     }
 
     public boolean registerUser(String userName, String passWd,String kind) {
-        if(checkLogin(userName,passWd)){
+        if(checkLogin(userName,passWd,kind)){
             return false;
         }
         String sql = "insert  into users (userName,passWd,kind) values(?,?,?)";
