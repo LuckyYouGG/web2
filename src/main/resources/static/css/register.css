@@ -99,7 +99,7 @@
 	border: 1px solid #dddddd;
 	padding-top: 20px;
 	margin-bottom: 70px;
-	background: url(../images/register_bg.jpg) bottom no-repeat white;
+	/*background: url(../images/register_bg.jpg) bottom no-repeat white;*/
 }
 .register .item input, .entry .item input {
 	width: 313px;

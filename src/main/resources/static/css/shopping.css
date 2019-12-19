@@ -390,6 +390,7 @@ _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizi
 	height: 420px;
 	float: right;
 	margin-right: 82px;
+	background: url("../images/right_bg.jpg");
 }
 .container1 {
 	width: 290px;
