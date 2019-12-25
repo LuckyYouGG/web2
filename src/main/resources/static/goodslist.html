@@ -43,7 +43,11 @@
   
   <div class="icon1"> <a href=""><img class="img1" src="images/love.png" title="收藏"/> </a> </div>
   <div class="icon2"><a href=""> <img class="img1" src="images/bag.png" title="购物车" /> </a> </div>
-  <div class="icon3"> <a class="register_user" href="register.html" target="_blank">注册账户&gt;</a> </div>
+  <div class="icon3" >
+    <a class="register_user" href="http://localhost:8088/forwordCart" target="_blank">
+      购物车
+    </a>
+  </div>
 </div>
 
 <!------header top-------> 
@@ -243,65 +247,123 @@
         &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
         分类：流行|最新|折扣|价格从低到高</p>
     </div>
-    <div class="picture"><a href=""><img src="images/w1.jpg"  />女神的新衣娜娜同款<br />
-      <h5 style="color:#F66">限时优惠￥399</h5>	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div></a>
+    <div class="picture">
+        <img src="images/w1.jpg"  />女神的新衣娜娜同款
+        <br/>
+         <h5 style="color:#F66">限时优惠￥399</h5>
+
+          <div onclick="addCartGoods(1)" class="mask">
+            <div class="info">Quick View</div>
+          </div>
     </div>
-    <div class="picture"><a href=""><img src="images/w2.jpg" />2014秋季粉色连衣裙<br />
-      <h5 style="color:#F66"> 限时优惠￥199</h5>	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div></a>
+
+    <div class="picture">
+
+        <img src="images/w2.jpg" />2019秋季粉色连衣裙
+        <br/>
+        <h5 style="color:#F66"> 限时优惠￥199</h5>
+        <div onclick="addCartGoods(2)" class="mask">
+          <div class="info">Quick View</div>
+        </div>
+
     </div>
-    <div class="picture"><a href=""><img src="images/w3.jpg" />2013秋季黄色针织衫<br />
-      <h5 style="color:#F66"> 限时优惠￥299</h5>	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div></a>
+
+    <div class="picture">
+
+        <img src="images/w3.jpg" />
+        2019秋季黄色针织衫
+      <br />
+      <h5 style="color:#F66"> 限时优惠￥299</h5>
+        <div onclick="addCartGoods(3)" class="mask">
+          <div class="info">Quick View</div>
+        </div>
+
     </div>
-    <div class="picture"><a href=""><img src="images/w4.jpg" />商务绅士风格白色衬衫<br />
-      <h5 style="color:#F66"> 限时优惠￥799</h5>	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div></a>
+
+    <div class="picture">
+
+      <img src="images/w4.jpg" />商务绅士风格白色衬衫<br />
+      <h5 style="color:#F66"> 限时优惠￥799</h5>
+      <div onclick="addCartGoods(4)" class="mask">
+        <div class="info">Quick View</div>
+      </div>
+
     </div>
-    <div class="picture"><a href=""><img src="images/w5.jpg" />女神新衣尚雯婕同款<br />
-      <h5 style="color:#F66"> 限时优惠￥699</h5>	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div></a>
+
+    <div class="picture">
+
+        <img src="images/w5.jpg" />女神新衣尚雯婕同款<br />
+      <h5 style="color:#F66"> 限时优惠￥699</h5>
+        <div onclick="addCartGoods(5)" class="mask">
+          <div class="info">Quick View</div>
+        </div>
+
     </div>
-    <div class="picture"><a href=""><img src="images/w6.jpg" />女神新衣张馨予同款<br />
-      <h5 style="color:#F66"> 限时优惠￥399</h5>	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div></a>
+
+    <div class="picture">
+
+        <img src="images/w6.jpg" />
+        女神新衣张馨予同款<br />
+      <h5 style="color:#F66"> 限时优惠￥399</h5>
+        <div onclick="addCartGoods(6)" class="mask">
+          <div class="info">Quick View</div>
+        </div>
+
     </div>
-    <div class="picture"><a href=""><img src="images/w7.jpg" />女神新衣亲子装儿童款<br />
-      <h5 style="color:#F66"> 限时优惠￥199</h5>	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div></a>
+
+    <div class="picture">
+
+        <img src="images/w7.jpg" />女神新衣蓝色调长款<br />
+      <h5 style="color:#F66"> 限时优惠￥199</h5>
+        <div onclick="addCartGoods(7)" class="mask">
+          <div class="info">Quick View</div>
+        </div>
+
     </div>
-    <div class="picture"><a href=""><img src="images/w8.jpg"  />时尚五分袖立领短上衣<br />
-      <h5 style="color:#F66">限时优惠￥399</h5>	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div></a>
+
+    <div class="picture">
+
+        <img src="images/w8.jpg"  />
+        时尚毛领上衣棕<br/>
+        <h5 style="color:#F66">限时优惠￥399</h5>
+        <div onclick="addCartGoods(8)" class="mask">
+          <div class="info">Quick View</div>
+        </div>
+
     </div>
-    <div class="picture"><a href=""><img src="images/w9.jpg" />2014最新时尚水晶鞋<br />
-      <h5 style="color:#F66">限时优惠￥499</h5>	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div></a>
+    <div class="picture">
+
+        <img src="images/w9.jpg" />2019最新白色貂皮大衣<br/>
+      <h5 style="color:#F66">限时优惠￥499</h5>
+        <div onclick="addCartGoods(9)" class="mask">
+          <div class="info">Quick View</div>
+        </div>
+
     </div>
-    <div class="picture"><a href=""><img src="images/w10.jpg" />伊芙丽中长毛呢外套<br />
-      <h5 style="color:#F66">限时优惠￥399</h5>	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div></a>
+
+    <div class="picture">
+
+        <img src="images/w10.jpg" />伊芙丽中长毛呢外套<br/>
+      <h5 style="color:#F66">限时优惠￥399</h5>
+        <div onclick="addCartGoods(10)" class="mask">
+          <div class="info">Quick View</div>
+        </div>
+
     </div>
-    <div class="picture"><a href=""><img src="images/w11.jpg" />伊芙丽蓝色妮子大衣<br />
-      <h5 style="color:#F66"> 限时优惠￥799</h5>	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div></a>
+    <div class="picture">
+        <img src="images/w11.jpg" />2019最新男中长款上衣<br/>
+      <h5 style="color:#F66"> 限时优惠￥799
+        <div onclick="addCartGoods(11)" class="mask">
+          <div class="info">Quick View</div>
+        </div>
     </div>
-    <div class="picture"><a href=""><img src="images/w12.jpg" />女神新衣娜娜套装<br />
-      <h5 style="color:#F66"> 限时优惠￥699</h5>	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div></a>
+    <div class="picture">
+
+        <img src="images/w12.jpg" />2019最新男短款外套<br />
+        <h5 style="color:#F66"> 限时优惠￥699</h5>
+        <div onclick="addCartGoods(12)" class="mask">
+          <div class="info">Quick View</div>
+        </div>
     </div>
   </div>
 </div>
@@ -423,4 +485,36 @@
 <script type="text/javascript"  src="script/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="script/js.js"></script>
 </body>
+
+<script language="JavaScript" type="text/javascript">
+  var xmlHttp = new XMLHttpRequest();
+  function addCartGoods(id) {
+    //http://47.93.221.123:8080/webhomework3/addCartGoodss
+    //http://localhost:8088/goodslist.html
+    xmlHttp.open("post","http://localhost:8088/addCartGoods");
+    xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlHttp.onreadystatechange = handleStateChange;
+    var para = "id="+id;
+    console.log(para);
+    xmlHttp.send(para);
+  }
+
+  function forwordCart() {
+    xmlHttp.open("post","http://localhost:8088/forwordCart");
+    xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  }
+  function handleStateChange() {
+    if(xmlHttp.readyState === 4) {
+      if(xmlHttp.status === 200){
+        alert("添加购物车成功");
+      }else {
+        alert("添加购物车失败");
+      }
+      console.log(xmlHttp.status)
+    }
+  }
+
+</script>
 </html>
+
+

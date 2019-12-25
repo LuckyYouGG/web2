@@ -72,13 +72,20 @@
 	top: 130px;
 	left: 90px;
 }
+.mask {
+  margin-top: 80px;
+
+}
+.mask:hover{
+	cursor: pointer;
+}
 .info {
 	display: block;
 	background: url(../images/label_new.png) no-repeat;
 	text-indent: -9999px;
-	width: 75px;
-	height: 75px;
-	margin-left: 134px;
+	width: 32px;
+	height: 32px;
+	margin-left: 180px;
 	margin-top: -145px;
 }
 /*------end content1------*/
