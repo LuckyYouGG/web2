@@ -1,6 +1,7 @@
 package com.example.webhomework2.controller;
 
 import bean.GoodsBean;
+import bean.HistoryOrdersBean;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,10 +43,31 @@ public class mainController {
         return "1";
     }
 
+
+
+//   http://localhost:8088/historyOrders
     @RequestMapping("/historyOrders")
-    public String historyOrders(HttpServletRequest request,HttpServletResponse response){
+    public ModelAndView historyOrders(HttpServletRequest request,HttpServletResponse response){
+        ModelAndView modelAndView = new ModelAndView("historyOrders");
         String sql = "select * from has_bought";
-      return "1";
+        try {
+              List<HistoryOrdersBean> historyOrdersBeans = jdbcTemplate.query(sql, new RowMapper<HistoryOrdersBean>() {
+                 HistoryOrdersBean tmp = null;
+                  @Override
+                  public HistoryOrdersBean mapRow(ResultSet resultSet, int i) throws SQLException {
+                      tmp = new HistoryOrdersBean();
+                      tmp.setIds(resultSet.getString("ids").split(","));
+                      tmp.setDataTime(resultSet.getString("dataTime"));
+                      return tmp;
+                  }
+              });
+             modelAndView.addObject("names",Common.names);
+             modelAndView.addObject("prices",Common.prices);
+              modelAndView.addObject("historyOrdersList",historyOrdersBeans);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+      return modelAndView;
     }
 
    /*http://localhost:8088/forwordCart*/
