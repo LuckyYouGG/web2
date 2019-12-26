@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 //http://localhost:8088/homework2/login
@@ -39,11 +41,21 @@ public class mainController {
         response.setStatus(200);
         return "1";
     }
+
+    @RequestMapping("/historyOrders")
+    public String historyOrders(HttpServletRequest request,HttpServletResponse response){
+        String sql = "select * from has_bought";
+      return "1";
+    }
+
+   /*http://localhost:8088/forwordCart*/
+    String ids = "";
     @RequestMapping("/forwordCart")
     @ResponseBody
     public ModelAndView forwordCart(HttpServletRequest request,HttpServletResponse response){
             ModelAndView modelAndView = new ModelAndView("cart");
             String sql =String.format("SELECT * FROM goods_list a,cart b where b.id=a.Gindex;");
+            ids ="";
             try{
                 List<GoodsBean> goodsBeans = jdbcTemplate.query(sql, new RowMapper<GoodsBean>()
                 {
@@ -55,9 +67,15 @@ public class mainController {
                         com.setGindex(resultSet.getString("Gindex"));
                         com.setGname(resultSet.getString("Gname"));
                         com.setGprice(resultSet.getString("Gprice"));
+                        ids += resultSet.getString("Gindex")+",";
                         return com;
                     }
                 });
+                if(ids.length()>0)
+                   ids = ids.substring(0,ids.length()-1);
+                System.out.println(ids+"  dasd");
+                System.out.println(ids.length());
+                modelAndView.addObject("ids",ids);
                 modelAndView.addObject("goodsBeans",goodsBeans);
              }catch (Exception e){
               e.printStackTrace();
@@ -65,6 +83,7 @@ public class mainController {
 
             return modelAndView;
     }
+
     @RequestMapping("/deleteCartGoods")
     public String deleleCartGoods(HttpServletRequest request,HttpServletResponse response) {
         String id = request.getParameter("id");
@@ -72,6 +91,25 @@ public class mainController {
 
         try{
             jdbcTemplate.update(sql);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        response.setStatus(200);
+        return "1";
+    }
+
+    @RequestMapping("/deleteAllCartGoods")
+    public String deleteAllCartGoods(HttpServletRequest request,HttpServletResponse response) {
+        String sql = "delete from cart";
+        String ids = request.getParameter("ids");
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        String dataTime = df.format(new Date());// new Date()为获取当前系统时间
+
+        String sql1 = "insert into has_bought (ids,dataTime) values(?,?)";
+        try{
+            jdbcTemplate.update(sql);
+            jdbcTemplate.update(sql1,ids,dataTime);
         }catch (Exception e){
             e.printStackTrace();
         }
